@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
                 resource_type: "auto",
               });
               return result.secure_url;
-            } catch (error) {
+            } catch (error: unknown) {
               console.error("Error uploading image to Cloudinary:", error);
               throw error;
             }
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
 
           uploadedImageUrls = await Promise.all(uploadPromises);
         }
-      } catch (error) {
+      } catch (error: unknown) {
         console.error("Error processing images:", error);
         throw new Error("Failed to process images");
       }
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
       listingId: docRef.id,
       imageUrls: uploadedImageUrls,
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error submitting listing:", error);
     return NextResponse.json(
       {

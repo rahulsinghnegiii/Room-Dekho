@@ -108,8 +108,8 @@ const ListingForm: React.FC = () => {
           }));
         };
         reader.readAsDataURL(compressedFile);
-      } catch (error) {
-        setError(`Error processing ${file.name}: ${error.message}`);
+      } catch (error: unknown) {
+        setError(`Error processing ${file.name}: ${(error as Error).message}`);
       }
     }
 

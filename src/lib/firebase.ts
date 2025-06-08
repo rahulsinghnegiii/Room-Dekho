@@ -33,7 +33,7 @@ export async function getListings() {
       id: doc.id,
       ...(doc.data() as ListingFormData)
     }));
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error fetching listings:", error);
     throw error;
   }
