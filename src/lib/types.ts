@@ -23,6 +23,8 @@ export interface ListingFormData {
   city?: string;
   facilities?: string[];
   images?: string[];
+  capacity?: string;
+  bedrooms?: string;
   contactName?: string;
   contactPhone?: string;
   contactEmail?: string;

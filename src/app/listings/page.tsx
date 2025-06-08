@@ -80,15 +80,15 @@ export default function ListingsPage() {
       <section className="py-20 bg-gray-100 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {paginatedListings.map((listing) => (
+            {paginatedListings.map((listing: ListingFormData & { id: string }) => (
               <RoomCard
                 key={listing.id}
                 title={listing.title}
                 price={Number(listing.price) || 0}
                 location={listing.location}
                 imageUrl={listing.images?.[0]}
-                guests={Number(listing.capacity) || 0}
-                bedrooms={1}
+                guests={Number(listing.capacity ?? '0')}
+                bedrooms={Number(listing.bedrooms ?? '0')}
               />
             ))}
           </div>

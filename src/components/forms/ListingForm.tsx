@@ -21,6 +21,8 @@ const initialState: ListingFormData = {
   city: "",
   facilities: [],
   images: [],
+  capacity: "",
+  bedrooms: "",
   contactName: "",
   contactPhone: "",
   contactEmail: "",
@@ -233,6 +235,30 @@ const ListingForm: React.FC = () => {
           onChange={handleChange}
           className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-accent focus:ring-accent px-4 py-2"
           rows={4}
+        />
+      </div>
+      <div>
+        <label htmlFor="capacity" className="block text-sm font-medium text-gray-700 mb-1">Number of Guests (Capacity)</label>
+        <input
+          type="number"
+          id="capacity"
+          name="capacity"
+          value={form.capacity}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-accent focus:ring-accent px-4 py-2"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700 mb-1">Number of Bedrooms</label>
+        <input
+          type="number"
+          id="bedrooms"
+          name="bedrooms"
+          value={form.bedrooms}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-accent focus:ring-accent px-4 py-2"
+          required
         />
       </div>
       <div>
