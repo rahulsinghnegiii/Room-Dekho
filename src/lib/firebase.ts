@@ -31,7 +31,7 @@ export async function getListings() {
     const querySnapshot = await getDocs(listingsQuery);
     return querySnapshot.docs.map(doc => ({
       id: doc.id,
-      ...doc.data()
+      ...(doc.data() as ListingFormData)
     }));
   } catch (error) {
     console.error("Error fetching listings:", error);
