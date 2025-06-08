@@ -1,0 +1,3 @@
+I want to build a lightweight, fast, and responsive website using Next.js for a project called Room Dekho. The purpose is to connect room owners and tenants. The site should include room listings, filtering features, a submission form for owners, and basic contact options. Design should be simple and mobile-friendly.
+
+I plan to host this on Vercel and manage data using Google Sheets or a JSON-based approach for now.
