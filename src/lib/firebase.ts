@@ -2,6 +2,7 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAnalytics } from 'firebase/analytics';
+import { ListingFormData } from '@/lib/types';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
